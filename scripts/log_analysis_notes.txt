@@ -1,0 +1,36 @@
+AUTHENTICATION LOG ANALYSIS
+
+Suspicious IP:
+192.168.1.50
+
+Evidence:
+- Multiple failed SSH login attempts from the same IP
+- Targeted usernames: admin, root, test
+- Repeated attempts within a short timeframe
+- All attempts failed
+- One successful SSH login was observed from a different IP (192.168.1.10) for valid user user1, which appears benign
+
+Assessment:
+The SSH activity from 192.168.1.50 is consistent with brute-force or username enumeration behavior.
+
+WEB ACCESS LOG ANALYSIS
+
+Suspicious IP:
+192.168.1.50
+
+Evidence:
+- Request to /admin resulted in 403 Forbidden
+- Request to /login succeeded with 200 OK
+- Multiple POST requests to /login resulted in 401 Unauthorized
+- Repeated login attempts occurred within seconds
+
+Assessment:
+The web activity from 192.168.1.50 is consistent with login abuse or web-based brute-force attempts.
+
+CORRELATION
+
+The same source IP, 192.168.1.50, appeared in both SSH and web logs within the same timeframe. This indicates coordinated suspicious activity targeting multiple access paths on the server.
+
+FINAL ANALYST JUDGMENT
+
+The observed activity strongly suggests unauthorized access attempts involving both SSH and web authentication services. Based on the provided logs, the activity appears malicious or highly suspicious, but there is no direct evidence of successful compromise from the suspicious IP.
