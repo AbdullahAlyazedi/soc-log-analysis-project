@@ -76,6 +76,14 @@ The analysis identified suspicious activity targeting both SSH and web authentic
 
 ---
 
+## Dashboard
+
+A simple dashboard was built using Streamlit to visualize suspicious login activity and highlight potentially malicious IP addresses.
+
+The dashboard displays:
+- Failed login attempts by IP
+- Suspicious IP detection alerts
+
 ## Author
 Abdulla Mohammed  
 Cybersecurity Student | SOC & Incident Response Trainee
